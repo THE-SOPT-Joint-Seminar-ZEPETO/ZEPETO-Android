@@ -1,12 +1,14 @@
 package org.sopt.zepeto.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import org.sopt.zepeto.R
+import androidx.appcompat.app.AppCompatActivity
+import org.sopt.zepeto.databinding.ActivityEditContentBinding
 
 class EditContentActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityEditContentBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_edit_content)
+        binding = ActivityEditContentBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 }
