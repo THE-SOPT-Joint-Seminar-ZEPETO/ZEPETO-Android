@@ -153,7 +153,7 @@
     </style>
 
     <style name="text_style_2">
-        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">12sp</item>
         <item name="android:lineSpacingExtra">6sp</item>
@@ -161,7 +161,7 @@
     </style>
 
     <style name="text_style_14">
-        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">12sp</item>
         <item name="android:lineSpacingExtra">6sp</item>
@@ -169,7 +169,7 @@
 
     <style name="text_style_12">
         <item name="android:gravity">end</item>
-        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">12sp</item>
         <item name="android:lineSpacingExtra">6sp</item>
@@ -177,7 +177,7 @@
     </style>
 
     <style name="text_style_11">
-        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">11sp</item>
         <item name="android:lineSpacingExtra">2.2sp</item>
@@ -185,7 +185,7 @@
     </style>
 
     <style name="text_style_8">
-        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">10sp</item>
         <item name="android:lineSpacingExtra">5sp</item>
@@ -193,7 +193,7 @@
     </style>
 
     <style name="text_style_3">
-        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">10sp</item>
         <item name="android:lineSpacingExtra">5sp</item>
@@ -201,7 +201,7 @@
     </style>
 
     <style name="text_style_24">
-        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">10sp</item>
         <item name="android:lineSpacingExtra">5sp</item>
@@ -209,7 +209,7 @@
     </style>
 
     <style name="text_style_13">
-        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">10sp</item>
         <item name="android:lineSpacingExtra">5sp</item>
