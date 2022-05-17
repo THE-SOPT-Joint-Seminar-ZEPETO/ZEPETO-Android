@@ -76,6 +76,7 @@
             app:layout_constraintStart_toStartOf="@id/gl_begin"
             app:layout_constraintTop_toBottomOf="@id/iv_back" />
 
+        <!-- TODO : 더미이미지 삭제 -->
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_photo"
             android:layout_width="0dp"
