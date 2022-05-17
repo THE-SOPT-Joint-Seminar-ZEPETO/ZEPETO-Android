@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditContentActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_begin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/post_kr"
+        android:textAppearance="@style/text_style_15"
+        app:layout_constraintBottom_toBottomOf="@id/iv_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_back" />
+
+    <EditText
+        android:id="@+id/et_contents"
+        android:layout_width="0dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="12dp"
+        android:background="@null"
+        android:gravity="top"
+        android:hint="@string/complete_story_kr"
+        android:maxHeight="124dp"
+        android:textAppearance="@style/text_style_14"
+        app:layout_constraintEnd_toStartOf="@id/iv_photo"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintStart_toStartOf="@id/gl_begin"
+        app:layout_constraintTop_toBottomOf="@id/iv_back" />
+
+    <ImageView
+        android:id="@+id/iv_photo"
+        android:layout_width="0dp"
+        android:layout_height="96dp"
+        app:layout_constraintEnd_toEndOf="@id/gl_end"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/et_contents"
+        app:layout_constraintTop_toTopOf="@id/et_contents"
+        tools:background="@tools:sample/backgrounds/scenic"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/iv_hashtag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:src="@drawable/ic_hash"
+        app:layout_constraintStart_toStartOf="@id/gl_begin"
+        app:layout_constraintTop_toBottomOf="@id/iv_photo"
+        tools:ignore="ContentDescription" />
+
+    <View
+        android:id="@+id/view_gray_top"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/gray_150"
+        app:layout_constraintEnd_toEndOf="@id/gl_end"
+        app:layout_constraintStart_toStartOf="@id/gl_begin"
+        app:layout_constraintTop_toBottomOf="@id/iv_hashtag" />
+
+    <ImageView
+        android:id="@+id/iv_person"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_person"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_gray_top"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_member"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/tag_member_kr"
+        android:textAppearance="@style/text_style_2"
+        app:layout_constraintBottom_toBottomOf="@id/iv_person"
+        app:layout_constraintStart_toEndOf="@id/iv_person"
+        app:layout_constraintTop_toTopOf="@id/iv_person" />
+
+    <include
+        layout="@layout/layout_edit_contnet_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_member"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_member" />
+
+    <ImageView
+        android:id="@+id/iv_pose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:src="@drawable/ic_idcards"
+        app:layout_constraintStart_toStartOf="@id/iv_person"
+        app:layout_constraintTop_toBottomOf="@id/iv_person"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/pose_tag_kr"
+        android:textAppearance="@style/text_style_2"
+        app:layout_constraintBottom_toBottomOf="@id/iv_pose"
+        app:layout_constraintStart_toEndOf="@id/iv_pose"
+        app:layout_constraintTop_toTopOf="@id/iv_pose" />
+
+    <include
+        layout="@layout/layout_edit_contnet_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_pose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_pose" />
+
+
+    <ImageView
+        android:id="@+id/iv_world"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:src="@drawable/ic_planet"
+        app:layout_constraintStart_toStartOf="@id/iv_pose"
+        app:layout_constraintTop_toBottomOf="@id/iv_pose"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/world_tag_kr"
+        android:textAppearance="@style/text_style_2"
+        app:layout_constraintBottom_toBottomOf="@id/iv_world"
+        app:layout_constraintStart_toEndOf="@id/iv_world"
+        app:layout_constraintTop_toTopOf="@id/iv_world" />
+
+    <include
+        layout="@layout/layout_edit_contnet_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_world"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_world" />
+
+    <View
+        android:id="@+id/view_gray_bottom"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="23dp"
+        android:background="@color/gray_150"
+        app:layout_constraintEnd_toEndOf="@id/gl_end"
+        app:layout_constraintStart_toStartOf="@id/gl_begin"
+        app:layout_constraintTop_toBottomOf="@id/iv_world" />
+
+    <ImageView
+        android:id="@+id/iv_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_chat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_gray_bottom"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/allow_comment_kr"
+        android:textAppearance="@style/text_style_2"
+        app:layout_constraintBottom_toBottomOf="@id/iv_comment"
+        app:layout_constraintStart_toEndOf="@id/iv_comment"
+        app:layout_constraintTop_toTopOf="@id/iv_comment" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_comment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_comment" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="9dp"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/rectangle_fill_purple_main_radius_4"
+        android:text="@string/complete_kr"
+        android:textAppearance="@style/text_style_18"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

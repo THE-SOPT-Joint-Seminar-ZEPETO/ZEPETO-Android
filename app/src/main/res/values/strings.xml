@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">zepeto</string>
+    <string name="post_kr">게시</string>
+    <string name="complete_story_kr">이야기를 완성하세요</string>
+    <string name="tag_member_kr">멤버 태그</string>
+    <string name="add_kr">추가</string>
+    <string name="pose_tag_kr">포즈 태그</string>
+    <string name="world_tag_kr">월드 태그</string>
+    <string name="allow_comment_kr">댓글 허용</string>
+    <string name="complete_kr">완료</string>
 </resources>
