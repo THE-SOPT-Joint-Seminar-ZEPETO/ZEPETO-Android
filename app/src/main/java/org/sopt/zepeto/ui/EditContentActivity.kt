@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import org.sopt.zepeto.databinding.ActivityEditContentBinding
 
 class EditContentActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityEditContentBinding
+    private lateinit var binding: ActivityEditContentBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditContentBinding.inflate(layoutInflater)

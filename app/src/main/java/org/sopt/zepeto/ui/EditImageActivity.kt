@@ -9,7 +9,7 @@ import org.sopt.zepeto.databinding.ActivityEditImageBinding
 
 class EditImageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditImageBinding
-    var imageUri : Uri = Uri.EMPTY
+    var imageUri: Uri = Uri.EMPTY
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditImageBinding.inflate(layoutInflater)
@@ -22,11 +22,11 @@ class EditImageActivity : AppCompatActivity() {
             binding.clEdit.visibility = View.INVISIBLE
         }
 
-        if(intent.hasExtra("imageUri")){
+        if (intent.hasExtra("imageUri")) {
             imageUri = intent.getParcelableExtra<Uri>("imageUri")!!
         }
 
-       initImage()
+        initImage()
     }
 
     private fun initImage() {
