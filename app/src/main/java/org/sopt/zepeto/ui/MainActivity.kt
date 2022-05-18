@@ -10,12 +10,9 @@ import org.sopt.zepeto.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-
-    //
     private val resultLauncher =
         registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
             if (uri != null) {
-
                 val intent = Intent(this, EditImageActivity::class.java)
                 intent.putExtra("imageUri", uri)
                 startActivity(intent)
@@ -26,17 +23,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         initBtnClickListener()
-
     }
 
     private fun initBtnClickListener() {
-
         binding.button.setOnClickListener {
             resultLauncher.launch("image/*")
-
         }
     }
-
 }

@@ -15,18 +15,15 @@ class EditImageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityEditImageBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         binding.root.setOnClickListener {
             binding.clEdit.visibility = View.VISIBLE
         }
         binding.clEdit.setOnClickListener {
             binding.clEdit.visibility = View.INVISIBLE
         }
-
         if (intent.hasExtra("imageUri")) {
             imageUri = intent.getParcelableExtra<Uri>("imageUri")!!
         }
-
         initImage()
         initBtnClickListener()
     }
@@ -38,7 +35,6 @@ class EditImageActivity : AppCompatActivity() {
     }
 
     private fun initBtnClickListener() {
-
         binding.ibBtEditNext.setOnClickListener {
             val intent = Intent(this, EditContentActivity::class.java)
             intent.putExtra("imageUri", imageUri)

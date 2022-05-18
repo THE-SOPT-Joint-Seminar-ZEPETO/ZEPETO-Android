@@ -10,7 +10,6 @@ import org.sopt.zepeto.databinding.FragmentFeedBinding
 class FeedFragment : Fragment() {
     private var _binding: FragmentFeedBinding? = null
     private val binding get() = _binding!!
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
