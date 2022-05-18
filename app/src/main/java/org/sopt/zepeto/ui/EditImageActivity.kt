@@ -1,5 +1,6 @@
 package org.sopt.zepeto.ui
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
@@ -27,6 +28,7 @@ class EditImageActivity : AppCompatActivity() {
         }
 
         initImage()
+        initBtnClickListener()
     }
 
     private fun initImage() {
@@ -35,4 +37,13 @@ class EditImageActivity : AppCompatActivity() {
             .into(binding.ivEditImage)
     }
 
+    private fun initBtnClickListener() {
+
+        binding.ibBtEditNext.setOnClickListener {
+            val intent = Intent(this, EditContentActivity::class.java)
+            intent.putExtra("imageUri", imageUri)
+            startActivity(intent)
+            finish()
+        }
+    }
 }
