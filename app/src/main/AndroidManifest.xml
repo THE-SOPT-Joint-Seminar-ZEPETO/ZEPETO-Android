@@ -18,10 +18,10 @@
 
         <activity
             android:name=".ui.EditImageActivity"
-            android:windowSoftInputMode="adjustNothing"
             android:exported="false" />
         <activity
             android:name=".ui.EditContentActivity"
+            android:windowSoftInputMode="adjustNothing"
             android:exported="false" />
         <activity
             android:name=".ui.MainActivity"
