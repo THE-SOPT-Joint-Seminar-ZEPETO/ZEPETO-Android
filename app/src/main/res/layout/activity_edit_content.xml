@@ -20,6 +20,15 @@
         android:focusableInTouchMode="true"
         tools:context=".EditContentActivity">
 
+        <View
+            android:id="@+id/view_full_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black_a_40"
+            android:clickable="true"
+            android:elevation="5dp"
+            android:visibility="gone" />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/gl_begin"
             android:layout_width="wrap_content"
@@ -111,7 +120,7 @@
             app:layout_constraintTop_toBottomOf="@id/iv_hashtag" />
 
         <View
-            android:id="@+id/view_background"
+            android:id="@+id/view_under_writing_area"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="15dp"

@@ -1,16 +1,15 @@
 package org.sopt.zepeto
 
-import android.content.ContentValues.TAG
 import android.content.Context
 import android.graphics.Rect
 import android.os.Bundle
-import android.util.Log
 import android.view.MotionEvent
+import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import org.sopt.zepeto.databinding.ActivityEditContentBinding
+import org.sopt.zepeto.util.ZepetoSnackBar
 
 class EditContentActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditContentBinding
@@ -31,10 +30,17 @@ class EditContentActivity : AppCompatActivity() {
 
     private fun initCompleteButtonCLick() {
         binding.btnComplete.setOnClickListener {
-            Toast.makeText(this, "서버통신 연결 해야함~", Toast.LENGTH_SHORT).show()
-            Log.d(TAG, "initCompleteButtonCLick: ${binding.etContents.text} ")
-            finish()
+            showSnackBar()
         }
+    }
+
+    private fun showSnackBar() {
+        val completeSnackBar = ZepetoSnackBar.make(binding.root)
+        completeSnackBar.addCallBack(
+            { binding.viewFullCover.visibility = View.VISIBLE },
+            { binding.viewFullCover.visibility = View.INVISIBLE }
+        )
+        completeSnackBar.show()
     }
 
     private fun setEditTextFocusListener() {
