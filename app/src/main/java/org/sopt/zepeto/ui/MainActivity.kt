@@ -10,14 +10,14 @@ import org.sopt.zepeto.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private var imageUri : Uri = Uri.EMPTY
+
     //
-       private val resultLauncher =
+    private val resultLauncher =
         registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
             if (uri != null) {
-                imageUri = uri
+
                 val intent = Intent(this, EditImageActivity::class.java)
-                intent.putExtra("imageUri", imageUri)
+                intent.putExtra("imageUri", uri)
                 startActivity(intent)
             }
         }

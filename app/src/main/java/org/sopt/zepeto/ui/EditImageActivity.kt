@@ -1,14 +1,15 @@
 package org.sopt.zepeto.ui
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import com.bumptech.glide.Glide
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import org.sopt.zepeto.databinding.ActivityEditImageBinding
 
 class EditImageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditImageBinding
-    var imageUri = intent.hasExtra("imageUri")
+    var imageUri : Uri = Uri.EMPTY
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditImageBinding.inflate(layoutInflater)
@@ -21,7 +22,17 @@ class EditImageActivity : AppCompatActivity() {
             binding.clEdit.visibility = View.INVISIBLE
         }
 
+        if(intent.hasExtra("imageUri")){
+            imageUri = intent.getParcelableExtra<Uri>("imageUri")!!
+        }
 
+       initImage()
+    }
+
+    private fun initImage() {
+        Glide.with(this)
+            .load(imageUri)
+            .into(binding.ivEditImage)
     }
 
 }
