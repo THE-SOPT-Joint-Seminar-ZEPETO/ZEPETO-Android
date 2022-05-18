@@ -1,6 +1,7 @@
 package org.sopt.zepeto.ui
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import org.sopt.zepeto.databinding.ActivityEditImageBinding
 
@@ -10,5 +11,14 @@ class EditImageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityEditImageBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.root.setOnClickListener {
+            binding.clEdit.visibility = View.VISIBLE
+        }
+        binding.clEdit.setOnClickListener {
+            binding.clEdit.visibility = View.INVISIBLE
+        }
     }
+
+
 }
