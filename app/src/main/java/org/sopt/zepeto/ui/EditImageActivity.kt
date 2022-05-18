@@ -8,6 +8,7 @@ import org.sopt.zepeto.databinding.ActivityEditImageBinding
 
 class EditImageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditImageBinding
+    var imageUri = intent.hasExtra("imageUri")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditImageBinding.inflate(layoutInflater)
@@ -22,7 +23,5 @@ class EditImageActivity : AppCompatActivity() {
 
 
     }
-
-
 
 }
