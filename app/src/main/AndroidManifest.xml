@@ -14,13 +14,13 @@
         android:theme="@style/Theme.Zepeto"
         tools:targetApi="31">
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.EditImageActivity"
             android:exported="false" />
         <activity
             android:name=".ui.EditContentActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.EditImageActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
