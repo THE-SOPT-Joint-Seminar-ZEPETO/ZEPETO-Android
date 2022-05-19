@@ -30,27 +30,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun initView() {
         binding.bnvMain.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.menu_home -> {
-                    binding.vpMain.currentItem = HOME_POS
-                    return@setOnItemSelectedListener true
+            with(binding.vpMain) {
+                when (it.itemId) {
+                    R.id.menu_home -> this.currentItem = HOME_POS
+                    R.id.menu_world -> this.currentItem = WORLD_POS
+                    R.id.menu_make -> this.currentItem = MAKE_POS
+                    R.id.menu_feed -> this.currentItem = FEED_POS
+                    else -> this.currentItem = PROFILE_POS
                 }
-                R.id.menu_world -> {
-                    binding.vpMain.currentItem = WORLD_POS
-                    return@setOnItemSelectedListener true
-                }
-                R.id.menu_make -> {
-                    binding.vpMain.currentItem = MAKE_POS
-                    return@setOnItemSelectedListener true
-                }
-                R.id.menu_feed -> {
-                    binding.vpMain.currentItem = FEED_POS
-                    return@setOnItemSelectedListener true
-                }
-                else -> {
-                    binding.vpMain.currentItem = PROFILE_POS
-                    return@setOnItemSelectedListener true
-                }
+                return@setOnItemSelectedListener true
             }
         }
     }
