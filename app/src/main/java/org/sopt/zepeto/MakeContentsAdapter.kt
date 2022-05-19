@@ -31,9 +31,7 @@ class MakeContentsAdapter : RecyclerView.Adapter<MakeContentsAdapter.MakeContent
         private val binding: ItemMakeContentsBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: MakeContentsData) {
-            Glide.with(itemView).load(data.imgUrl).into(binding.ivImage)
-            if (data.isStared) binding.ivStar.setImageResource(R.drawable.ic_star_fill)
-            if (data.isVideo) binding.ivVideo.visibility = View.VISIBLE
+            binding.contents = data
         }
     }
 }

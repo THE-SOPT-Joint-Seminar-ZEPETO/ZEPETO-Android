@@ -43,14 +43,10 @@ class MakeAdapter : RecyclerView.Adapter<MakeAdapter.MakeViewHolder>() {
                 binding.rvBody.adapter = this
             }
 
-            Glide.with(itemView).load(data.profileImgUrl).circleCrop().into(binding.ivProfile)
-            with(binding) {
-                tvTitle.text = data.title
-                tvDescription.text = data.description
-                rvBody.apply {
-                    layoutManager = GridLayoutManager(context, data.images.size)
-                    addItemDecoration(customDecoration)
-                }
+            binding.make = data
+            binding.rvBody.apply {
+                layoutManager = GridLayoutManager(context, data.images.size)
+                addItemDecoration(customDecoration)
             }
         }
     }
