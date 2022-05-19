@@ -30,6 +30,7 @@ class FeedFragment : Fragment() {
         }
         binding.clFeed.setOnClickListener {
             binding.clFeed.visibility = View.INVISIBLE
+
         }
     }
 }
