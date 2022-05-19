@@ -50,7 +50,7 @@
             android:id="@+id/tv_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/more_contents"
+            android:text="@string/more_contents_kr"
             android:textAppearance="@style/text_style_2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

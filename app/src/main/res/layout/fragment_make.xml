@@ -20,7 +20,7 @@
             android:id="@+id/tv_topbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/make"
+            android:text="@string/make_kr"
             android:textAppearance="@style/text_style_5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -180,6 +180,41 @@
 
     </org.sopt.zepeto.util.NestedScrollableHost>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:background="@drawable/shape_bg_upload_btn"
+        android:elevation="5dp"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="16dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_image_fill"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/upload_kr"
+            android:textAppearance="@style/text_style_4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_upload"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -188,12 +223,13 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_feed_list"
-            android:paddingTop="16dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingTop="16dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_make_list" />
 
     </androidx.core.widget.NestedScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
