@@ -83,97 +83,43 @@
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_my"
                     style="@style/chip_style"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:text="@string/my_upper"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:text="@string/my_upper" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_hot"
                     style="@style/chip_style"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:checked="true"
-                    android:clickable="true"
-                    android:text="@string/hot_upper"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:text="@string/hot_upper" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_new"
                     style="@style/chip_style"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:text="@string/new_upper"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:text="@string/new_upper" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_template"
                     style="@style/chip_style"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:text="@string/template_kr"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:text="@string/template_kr" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_couple"
                     style="@style/chip_style"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:text="@string/couple_kr"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:text="@string/couple_kr" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_photo"
                     style="@style/chip_style"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:text="@string/photo"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:text="@string/photo" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_challenge"
                     style="@style/chip_style"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:text="@string/challenge_kr"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:text="@string/challenge_kr" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_stylish"
                     style="@style/chip_style"
-                    android:clickable="true"
-                    android:text="@string/stylish_kr"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:text="@string/stylish_kr" />
 
             </com.google.android.material.chip.ChipGroup>
         </HorizontalScrollView>
@@ -185,11 +131,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
         android:background="@drawable/shape_bg_upload_btn"
         android:elevation="5dp"
-        android:paddingVertical="12dp"
         android:paddingHorizontal="16dp"
-        android:layout_margin="16dp"
+        android:paddingVertical="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 

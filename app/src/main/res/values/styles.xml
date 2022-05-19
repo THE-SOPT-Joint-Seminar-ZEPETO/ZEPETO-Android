@@ -12,6 +12,11 @@
         <item name="android:textAppearance">@style/text_style_1</item>
         <item name="chipBackgroundColor">@color/color_bg_chip</item>
         <item name="android:textColor">@color/color_text_chip</item>
+        <item name="android:clickable">true</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
     </style>
 
 </resources>
