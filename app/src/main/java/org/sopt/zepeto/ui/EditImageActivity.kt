@@ -49,6 +49,7 @@ class EditImageActivity : AppCompatActivity() {
         }
     }
 
+    //싱글톤 객체라고 합니다..
     companion object {
         const val IMAGE_URI = "imageUri"
     }
