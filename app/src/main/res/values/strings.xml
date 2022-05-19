@@ -8,6 +8,14 @@
     <string name="world_tag_kr">월드 태그</string>
     <string name="allow_comment_kr">댓글 허용</string>
     <string name="complete_kr">완료</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="make">만들기</string>
+    <string name="my_upper">MY</string>
+    <string name="hot_upper">HOT</string>
+    <string name="new_upper">NEW</string>
+    <string name="template_kr">템플렛</string>
+    <string name="couple_kr">커플</string>
+    <string name="photo">Photo</string>
+    <string name="challenge_kr">챌린지</string>
+    <string name="stylish_kr">스타일리쉬</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
