@@ -2,18 +2,20 @@ package org.sopt.zepeto.ui
 
 import android.content.Context
 import android.graphics.Rect
+import android.net.Uri
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import org.sopt.zepeto.databinding.ActivityEditContentBinding
 import org.sopt.zepeto.util.ZepetoSnackBar
 
 class EditContentActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditContentBinding
-
+    private lateinit var imageUri : Uri
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditContentBinding.inflate(layoutInflater)
@@ -22,6 +24,7 @@ class EditContentActivity : AppCompatActivity() {
         setEditTextFocusListener()
         initBackButtonClick()
         initCompleteButtonCLick()
+        initImage()
     }
 
     private fun initBackButtonClick() {
@@ -67,5 +70,14 @@ class EditContentActivity : AppCompatActivity() {
             }
         }
         return super.dispatchTouchEvent(event)
+    }
+
+    private fun initImage() {
+        if (intent.hasExtra(EditImageActivity.IMAGE_URI)) {
+            imageUri = intent.getParcelableExtra<Uri>(EditImageActivity.IMAGE_URI)!!
+        }
+        Glide.with(this)
+            .load(imageUri)
+            .into(binding.ivPhoto)
     }
 }
