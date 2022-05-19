@@ -23,6 +23,12 @@ class MakeAdapter : RecyclerView.Adapter<MakeAdapter.MakeViewHolder>() {
 
     override fun getItemCount(): Int = makeList.size
 
+    fun setItems(newItems: List<MakeData>) {
+        makeList.clear()
+        makeList.addAll(newItems)
+        notifyDataSetChanged()
+    }
+
     class MakeViewHolder(
         private val binding: ItemMakeListBinding
     ) : RecyclerView.ViewHolder(binding.root) {
@@ -32,17 +38,16 @@ class MakeAdapter : RecyclerView.Adapter<MakeAdapter.MakeViewHolder>() {
                 else -> GridSpaceDecoration(12.dpToPixel(), 3)
             }
 
-            val makeContentsAdapter = MakeContentsAdapter().apply {
-                makeContentsList.addAll(data.images)
-                notifyDataSetChanged()
+            MakeContentsAdapter().apply {
+                setItems(data.images)
+                binding.rvBody.adapter = this
             }
 
-            Glide.with(itemView).load(data.profile).circleCrop().into(binding.ivProfile)
+            Glide.with(itemView).load(data.profileImgUrl).circleCrop().into(binding.ivProfile)
             with(binding) {
                 tvTitle.text = data.title
                 tvDescription.text = data.description
                 rvBody.apply {
-                    adapter = makeContentsAdapter
                     layoutManager = GridLayoutManager(context, data.images.size)
                     addItemDecoration(customDecoration)
                 }

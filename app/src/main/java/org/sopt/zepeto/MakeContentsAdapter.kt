@@ -19,13 +19,19 @@ class MakeContentsAdapter : RecyclerView.Adapter<MakeContentsAdapter.MakeContent
         holder.onBind(makeContentsList[position])
     }
 
+    fun setItems(newItems: List<MakeContentsData>) {
+        makeContentsList.clear()
+        makeContentsList.addAll(newItems)
+        notifyDataSetChanged()
+    }
+
     override fun getItemCount(): Int = makeContentsList.size
 
     class MakeContentsViewHolder(
         private val binding: ItemMakeContentsBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: MakeContentsData) {
-            Glide.with(itemView).load(data.url).into(binding.ivImage)
+            Glide.with(itemView).load(data.imgUrl).into(binding.ivImage)
             if (data.isStared) binding.ivStar.setImageResource(R.drawable.ic_star_fill)
             if (data.isVideo) binding.ivVideo.visibility = View.VISIBLE
         }

@@ -32,78 +32,33 @@ class MakeFragment : Fragment() {
     }
 
     private fun initAdapter() {
+        // sample data
+        val sampleImgUrl = "https://avatars.githubusercontent.com/u/105535772?s=200&v=4"
         val imagesThree = listOf(
-            MakeContentsData(
-                "https://avatars.githubusercontent.com/u/105535772?s=200&v=4",
-                true,
-                false
-            ),
-            MakeContentsData(
-                "https://avatars.githubusercontent.com/u/105535772?s=200&v=4",
-                false,
-                true
-            ),
-            MakeContentsData(
-                "https://avatars.githubusercontent.com/u/105535772?s=200&v=4",
-                true,
-                true
-            )
+            MakeContentsData(sampleImgUrl, true, false),
+            MakeContentsData(sampleImgUrl, false, true),
+            MakeContentsData(sampleImgUrl, true, true),
         )
         val imagesTwo = listOf(
-            MakeContentsData(
-                "https://avatars.githubusercontent.com/u/105535772?s=200&v=4",
-                false,
-                true
-            ),
-            MakeContentsData(
-                "https://avatars.githubusercontent.com/u/105535772?s=200&v=4",
-                true,
-                false
-            ),
+            MakeContentsData(sampleImgUrl, false, true),
+            MakeContentsData(sampleImgUrl, true, false),
         )
-        val makeAdapter = MakeAdapter().apply {
-            makeList.addAll(
-                listOf(
-                    MakeData(
-                        "title1",
-                        "https://avatars.githubusercontent.com/u/105535772?s=200&v=4",
-                        "description1",
-                        imagesThree
-                    ),
-                    MakeData(
-                        "title2",
-                        "https://avatars.githubusercontent.com/u/105535772?s=200&v=4",
-                        "description2",
-                        imagesTwo
-                    ),
-                    MakeData(
-                        "title3",
-                        "https://avatars.githubusercontent.com/u/105535772?s=200&v=4",
-                        "description3",
-                        imagesThree
-                    ),
-                    MakeData(
-                        "title4",
-                        "https://avatars.githubusercontent.com/u/105535772?s=200&v=4",
-                        "description4",
-                        imagesThree
-                    ),
-                    MakeData(
-                        "title5",
-                        "https://avatars.githubusercontent.com/u/105535772?s=200&v=4",
-                        "description5",
-                        imagesTwo
-                    ),
-                    MakeData(
-                        "title6",
-                        "https://avatars.githubusercontent.com/u/105535772?s=200&v=4",
-                        "description6",
-                        imagesThree
-                    )
-                )
-            )
-            notifyDataSetChanged()
+        val makeDataTwo = MakeData("title", sampleImgUrl, "description", imagesThree)
+        val makeDataThree = MakeData("title", sampleImgUrl, "description", imagesTwo)
+
+        val makeLists = listOf(
+            makeDataThree,
+            makeDataTwo,
+            makeDataThree,
+            makeDataTwo,
+            makeDataTwo,
+            makeDataThree,
+            makeDataTwo
+        )
+
+        MakeAdapter().apply {
+            setItems(makeLists)
+            binding.rvFeedList.adapter = this
         }
-        binding.rvFeedList.adapter = makeAdapter
     }
 }
