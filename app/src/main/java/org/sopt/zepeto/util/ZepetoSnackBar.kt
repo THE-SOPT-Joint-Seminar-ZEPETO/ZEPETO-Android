@@ -8,8 +8,10 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
 import org.sopt.zepeto.databinding.LayoutCompleteSnackBarBinding
+import org.sopt.zepeto.ui.EditContentActivity
 
 class ZepetoSnackBar(view: View) {
+    private lateinit var editContentActivity: EditContentActivity
 
     companion object {
         fun make(view: View) = ZepetoSnackBar(view)
@@ -40,12 +42,23 @@ class ZepetoSnackBar(view: View) {
         onDismiss: (() -> Unit)? = null,
     ) {
         snackBar.addCallback(object : BaseTransientBottomBar.BaseCallback<Snackbar>() {
-            override fun onShown(tbb: Snackbar?) { onShown?.invoke() }
-            override fun onDismissed(tbb: Snackbar?, e: Int) { onDismiss?.invoke() }
+            override fun onShown(tbb: Snackbar?) {
+                onShown?.invoke()
+            }
+            override fun onDismissed(tbb: Snackbar?, e: Int) {
+                onDismiss?.invoke()
+                if (e == Snackbar.Callback.DISMISS_EVENT_TIMEOUT) {
+                    editContentActivity.finish()
+                }
+            }
         })
     }
 
     fun show() {
         snackBar.show()
+    }
+
+    fun addActivityInfo(editContentActivity: EditContentActivity) {
+        this.editContentActivity = editContentActivity
     }
 }
