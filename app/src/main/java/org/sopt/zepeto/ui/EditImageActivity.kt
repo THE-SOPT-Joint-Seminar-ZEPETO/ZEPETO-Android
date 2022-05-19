@@ -18,6 +18,7 @@ class EditImageActivity : AppCompatActivity() {
 
         initImage()
         initBtnClickListener()
+        initViewClickListener()
     }
 
     private fun initImage() {
@@ -36,6 +37,10 @@ class EditImageActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+    }
+
+    private fun initViewClickListener(){
         binding.root.setOnClickListener {
             binding.clEdit.visibility = View.VISIBLE
         }
