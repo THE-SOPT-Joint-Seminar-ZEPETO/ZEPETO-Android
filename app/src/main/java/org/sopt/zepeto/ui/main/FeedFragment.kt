@@ -15,11 +15,21 @@ class FeedFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentFeedBinding.inflate(layoutInflater, container, false)
+        initViewClickListener()
         return binding.root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun initViewClickListener(){
+        binding.root.setOnClickListener {
+            binding.clFeed.visibility = View.VISIBLE
+        }
+        binding.clFeed.setOnClickListener {
+            binding.clFeed.visibility = View.INVISIBLE
+        }
     }
 }
