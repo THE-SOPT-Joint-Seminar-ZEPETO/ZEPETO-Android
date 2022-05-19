@@ -10,25 +10,21 @@ import org.sopt.zepeto.databinding.ActivityEditImageBinding
 
 class EditImageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditImageBinding
-    var imageUri: Uri = Uri.EMPTY
+    private lateinit var imageUri : Uri
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditImageBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.root.setOnClickListener {
-            binding.clEdit.visibility = View.VISIBLE
-        }
-        binding.clEdit.setOnClickListener {
-            binding.clEdit.visibility = View.INVISIBLE
-        }
-        if (intent.hasExtra("imageUri")) {
-            imageUri = intent.getParcelableExtra<Uri>("imageUri")!!
-        }
+
+
         initImage()
         initBtnClickListener()
     }
 
     private fun initImage() {
+        if (intent.hasExtra("imageUri")) {
+            imageUri = intent.getParcelableExtra<Uri>("imageUri")!!
+        }
         Glide.with(this)
             .load(imageUri)
             .into(binding.ivEditImage)
@@ -40,6 +36,12 @@ class EditImageActivity : AppCompatActivity() {
             intent.putExtra("imageUri", imageUri)
             startActivity(intent)
             finish()
+        }
+        binding.root.setOnClickListener {
+            binding.clEdit.visibility = View.VISIBLE
+        }
+        binding.clEdit.setOnClickListener {
+            binding.clEdit.visibility = View.INVISIBLE
         }
     }
 }
