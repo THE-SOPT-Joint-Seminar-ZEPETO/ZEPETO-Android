@@ -16,14 +16,13 @@ class EditImageActivity : AppCompatActivity() {
         binding = ActivityEditImageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         initImage()
         initBtnClickListener()
     }
 
     private fun initImage() {
-        if (intent.hasExtra("imageUri")) {
-            imageUri = intent.getParcelableExtra<Uri>("imageUri")!!
+        if (intent.hasExtra(IMAGE_URI)) {
+            imageUri = intent.getParcelableExtra<Uri>(IMAGE_URI)!!
         }
         Glide.with(this)
             .load(imageUri)
@@ -33,7 +32,7 @@ class EditImageActivity : AppCompatActivity() {
     private fun initBtnClickListener() {
         binding.ibBtEditNext.setOnClickListener {
             val intent = Intent(this, EditContentActivity::class.java)
-            intent.putExtra("imageUri", imageUri)
+            intent.putExtra(IMAGE_URI, imageUri)
             startActivity(intent)
             finish()
         }
@@ -43,5 +42,9 @@ class EditImageActivity : AppCompatActivity() {
         binding.clEdit.setOnClickListener {
             binding.clEdit.visibility = View.INVISIBLE
         }
+    }
+
+    companion object {
+        const val IMAGE_URI = "imageUri"
     }
 }
