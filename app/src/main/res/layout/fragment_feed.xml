@@ -5,16 +5,14 @@
     android:layout_height="match_parent"
     android:background="@color/black">
 
-
     <ImageView
         android:id="@+id/iv_feed_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/dummy_image"
         android:scaleType="centerInside"
+        android:src="@drawable/dummy_image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_feed"
@@ -23,33 +21,69 @@
         android:background="@drawable/background_feed"
         android:visibility="visible">
 
-        <ImageButton
-            android:id="@+id/ib_following"
+        <LinearLayout
+            android:id="@+id/ll_following"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="1.5dp"
-            android:background="@drawable/ic_following"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
-            android:id="@+id/ib_recommend"
+            <TextView
+                android:id="@+id/tv_following"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="팔로잉"
+                android:theme="@style/text_style_21" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_recommend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="1.5dp"
-            android:background="@drawable/ic_recommend"
-            app:layout_constraintStart_toEndOf="@id/ib_following"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            app:layout_constraintStart_toEndOf="@id/ll_following"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
-            android:id="@+id/ib_popularity"
+            <TextView
+                android:id="@+id/tv_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="추천"
+                android:theme="@style/text_style_21" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_popularity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="1.5dp"
-            android:background="@drawable/ic_popularity"
-            app:layout_constraintStart_toEndOf="@id/ib_recommend"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            app:layout_constraintStart_toEndOf="@id/ll_recommend"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/ib_popularity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="인기"
+                android:theme="@style/text_style_21" />
+
+        </LinearLayout>
 
         <ImageButton
             android:id="@+id/ib_magnifying_glass"
