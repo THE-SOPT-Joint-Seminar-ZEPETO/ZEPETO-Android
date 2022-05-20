@@ -10,16 +10,17 @@
         android:id="@+id/iv_feed_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:src="@drawable/dummy_image"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@drawable/background_feed"
         android:id="@+id/cl_feed"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/background_feed"
         android:visibility="visible">
 
         <ImageButton
