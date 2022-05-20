@@ -11,9 +11,11 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import org.sopt.zepeto.databinding.ActivityEditContentBinding
+import org.sopt.zepeto.util.ViewPagerAdapter
 import org.sopt.zepeto.util.ZepetoSnackBar
 
 class EditContentActivity : AppCompatActivity() {
+    private val mainActivity = MainActivity.getInstance()
     private lateinit var binding: ActivityEditContentBinding
     private lateinit var imageUri: Uri
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +36,7 @@ class EditContentActivity : AppCompatActivity() {
     private fun initCompleteButtonCLick() {
         binding.btnComplete.setOnClickListener {
             showSnackBar()
+            mainActivity?.setCurrentItem(MainActivity.FEED_POS)
         }
     }
 
