@@ -7,7 +7,7 @@
 
         <variable
             name="make"
-            type="org.sopt.zepeto.util.MakeData" />
+            type="org.sopt.zepeto.data.response.ResponseImages" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
