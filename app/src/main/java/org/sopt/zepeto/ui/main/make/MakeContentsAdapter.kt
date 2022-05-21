@@ -1,12 +1,13 @@
-package org.sopt.zepeto.util
+package org.sopt.zepeto.ui.main.make
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import org.sopt.zepeto.data.response.Images
 import org.sopt.zepeto.databinding.ItemMakeContentsBinding
 
 class MakeContentsAdapter : RecyclerView.Adapter<MakeContentsAdapter.MakeContentsViewHolder>() {
-    val makeContentsList = mutableListOf<MakeContentsData>()
+    val makeContentsList = mutableListOf<Images>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MakeContentsViewHolder {
         val binding =
             ItemMakeContentsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -17,7 +18,7 @@ class MakeContentsAdapter : RecyclerView.Adapter<MakeContentsAdapter.MakeContent
         holder.onBind(makeContentsList[position])
     }
 
-    fun setItems(newItems: List<MakeContentsData>) {
+    fun setItems(newItems: List<Images>) {
         makeContentsList.clear()
         makeContentsList.addAll(newItems)
         notifyDataSetChanged()
@@ -28,8 +29,8 @@ class MakeContentsAdapter : RecyclerView.Adapter<MakeContentsAdapter.MakeContent
     class MakeContentsViewHolder(
         private val binding: ItemMakeContentsBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun onBind(data: MakeContentsData) {
-            binding.contents = data
+        fun onBind(data: Images) {
+            binding.images = data
         }
     }
 }
