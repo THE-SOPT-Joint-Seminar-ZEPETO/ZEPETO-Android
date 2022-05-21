@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="chip_style" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipCornerRadius">32dp</item>
+        <item name="textStartPadding">11dp</item>
+        <item name="textEndPadding">11dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="chipMinTouchTargetSize">0dp</item>
+        <item name="rippleColor">@color/gray_150</item>
+        <item name="android:textAppearance">@style/text_style_1</item>
+        <item name="chipBackgroundColor">@color/color_bg_chip</item>
+        <item name="android:textColor">@color/color_text_chip</item>
+        <item name="android:clickable">true</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+    </style>
+
+</resources>

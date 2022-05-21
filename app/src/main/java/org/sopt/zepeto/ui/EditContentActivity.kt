@@ -11,11 +11,13 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import org.sopt.zepeto.databinding.ActivityEditContentBinding
+import org.sopt.zepeto.util.ViewPagerAdapter
 import org.sopt.zepeto.util.ZepetoSnackBar
 
 class EditContentActivity : AppCompatActivity() {
+    private val mainActivity = MainActivity.getInstance()
     private lateinit var binding: ActivityEditContentBinding
-    private lateinit var imageUri : Uri
+    private lateinit var imageUri: Uri
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditContentBinding.inflate(layoutInflater)
@@ -34,11 +36,13 @@ class EditContentActivity : AppCompatActivity() {
     private fun initCompleteButtonCLick() {
         binding.btnComplete.setOnClickListener {
             showSnackBar()
+            mainActivity?.setCurrentItem(MainActivity.FEED_POS)
         }
     }
 
     private fun showSnackBar() {
         val completeSnackBar = ZepetoSnackBar.make(binding.root)
+        completeSnackBar.addActivityInfo(this)
         completeSnackBar.addCallBack(
             { binding.viewFullCover.visibility = View.VISIBLE },
             { binding.viewFullCover.visibility = View.INVISIBLE }
@@ -56,7 +60,7 @@ class EditContentActivity : AppCompatActivity() {
     override fun dispatchTouchEvent(event: MotionEvent): Boolean {
         val v = currentFocus
         if (v != null && event.action == MotionEvent.ACTION_UP || event.action == MotionEvent.ACTION_MOVE && v is EditText && !v.javaClass
-            .name.startsWith("android.webkit.")
+                .name.startsWith("android.webkit.")
         ) {
             if (v is EditText) {
                 val outRect = Rect()
