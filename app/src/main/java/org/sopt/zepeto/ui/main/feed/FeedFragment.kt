@@ -24,7 +24,7 @@ class FeedFragment : Fragment() {
         _binding = null
     }
 
-    private fun initViewClickListener(){
+    private fun initViewClickListener() {
         binding.root.setOnClickListener {
             binding.clFeed.visibility = View.VISIBLE
         }

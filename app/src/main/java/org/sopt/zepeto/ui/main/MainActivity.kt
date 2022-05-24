@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         binding.vpMain.setCurrentItem(item, true)
     }
 
-    init{
+    init {
         instance = this
     }
 

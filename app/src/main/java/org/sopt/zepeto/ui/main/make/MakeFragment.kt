@@ -3,15 +3,12 @@ package org.sopt.zepeto.ui.main.make
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.fragment.app.Fragment
 import org.sopt.zepeto.data.ServiceCreator
-import org.sopt.zepeto.util.MakeContentsData
-import org.sopt.zepeto.util.MakeData
 import org.sopt.zepeto.databinding.FragmentMakeBinding
 import org.sopt.zepeto.ui.editimage.EditImageActivity
 import org.sopt.zepeto.util.enqueueUtil

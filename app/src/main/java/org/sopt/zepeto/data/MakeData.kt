@@ -1,4 +1,4 @@
-package org.sopt.zepeto.util
+package org.sopt.zepeto.data
 
 data class MakeData(
     val title: String,

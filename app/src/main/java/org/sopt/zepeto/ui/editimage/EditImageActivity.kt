@@ -11,7 +11,7 @@ import org.sopt.zepeto.ui.eidtcontent.EditContentActivity
 
 class EditImageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditImageBinding
-    private lateinit var imageUri : Uri
+    private lateinit var imageUri: Uri
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditImageBinding.inflate(layoutInflater)
@@ -41,7 +41,7 @@ class EditImageActivity : AppCompatActivity() {
 
     }
 
-    private fun initViewClickListener(){
+    private fun initViewClickListener() {
         binding.root.setOnClickListener {
             binding.clEdit.visibility = View.VISIBLE
         }

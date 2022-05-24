@@ -3,7 +3,6 @@ package org.sopt.zepeto.util
 import android.content.Context
 import android.content.res.Resources
 import android.util.Log
-import android.widget.Toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
