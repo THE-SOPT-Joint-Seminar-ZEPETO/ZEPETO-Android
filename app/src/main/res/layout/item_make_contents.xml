@@ -8,8 +8,8 @@
         <import type="android.view.View" />
 
         <variable
-            name="contents"
-            type="org.sopt.zepeto.util.MakeContentsData" />
+            name="images"
+            type="org.sopt.zepeto.data.response.Images" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            app:imgUrl="@{contents.imgUrl}"
+            app:imgUrl="@{images.imgUrl}"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -36,7 +36,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:src="@drawable/ic_video_fill"
-            android:visibility="@{contents.video? View.VISIBLE: View.GONE}"
+            android:visibility="@{images.video? View.VISIBLE: View.GONE}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="ContentDescription" />
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:src="@{contents.stared? @drawable/ic_star_fill: @drawable/ic_star_line}"
+            android:src="@{images.stared? @drawable/ic_star_fill: @drawable/ic_star_line}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="ContentDescription" />

@@ -1,4 +1,4 @@
-package org.sopt.zepeto.ui.main
+package org.sopt.zepeto.ui.main.make
 
 import android.content.Intent
 import android.net.Uri
@@ -7,13 +7,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import org.sopt.zepeto.util.MakeAdapter
+import org.sopt.zepeto.data.ServiceCreator
 import org.sopt.zepeto.util.MakeContentsData
 import org.sopt.zepeto.util.MakeData
 import org.sopt.zepeto.databinding.FragmentMakeBinding
-import org.sopt.zepeto.ui.EditImageActivity
-import org.sopt.zepeto.ui.MainActivity
+import org.sopt.zepeto.ui.editimage.EditImageActivity
+import org.sopt.zepeto.util.enqueueUtil
 
 
 class MakeFragment : Fragment() {
@@ -41,7 +42,7 @@ class MakeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initAdapter()
+        initData()
         initBtnClickListener()
     }
 
@@ -50,36 +51,21 @@ class MakeFragment : Fragment() {
         _binding = null
     }
 
-    private fun initAdapter() {
-        // sample data
-        val sampleImgUrl = "https://avatars.githubusercontent.com/u/105535772?s=200&v=4"
-        val imagesThree = listOf(
-            MakeContentsData(sampleImgUrl, true, false),
-            MakeContentsData(sampleImgUrl, false, true),
-            MakeContentsData(sampleImgUrl, true, true),
-        )
-        val imagesTwo = listOf(
-            MakeContentsData(sampleImgUrl, false, true),
-            MakeContentsData(sampleImgUrl, true, false),
-        )
-        val makeDataTwo = MakeData("title", sampleImgUrl, "description", imagesThree)
-        val makeDataThree = MakeData("title", sampleImgUrl, "description", imagesTwo)
-
-        val makeLists = listOf(
-            makeDataThree,
-            makeDataTwo,
-            makeDataThree,
-            makeDataTwo,
-            makeDataTwo,
-            makeDataThree,
-            makeDataTwo
-        )
-
-        MakeAdapter().apply {
-            setItems(makeLists)
-            binding.rvFeedList.adapter = this
+    private fun initData() {
+        ServiceCreator.zepetoService.getImages().apply {
+            enqueueUtil(
+                onSuccess = {
+                    it.data?.let {
+                        makeAdapter = MakeAdapter().apply {
+                            setItems(it)
+                            binding.rvFeedList.adapter = this
+                        }
+                    }
+                }
+            )
         }
     }
+
 
     private fun initBtnClickListener() {
         binding.clUpload.setOnClickListener {
