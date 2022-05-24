@@ -7,7 +7,7 @@ data class ResponseFeed(
     val _id : String,
     @SerializedName("image")
     val imageUrl : String,
-    val context : String,
+    val content : String,
     val userName : String,
     @SerializedName("userProfileImage")
     val userProfileImageUrl : String
