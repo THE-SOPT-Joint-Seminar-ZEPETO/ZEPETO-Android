@@ -8,7 +8,7 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
 import org.sopt.zepeto.databinding.LayoutCompleteSnackBarBinding
-import org.sopt.zepeto.ui.EditContentActivity
+import org.sopt.zepeto.ui.eidtcontent.EditContentActivity
 
 class ZepetoSnackBar(view: View) {
     private lateinit var editContentActivity: EditContentActivity

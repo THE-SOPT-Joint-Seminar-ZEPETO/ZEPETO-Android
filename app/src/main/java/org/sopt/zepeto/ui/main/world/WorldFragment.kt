@@ -1,4 +1,4 @@
-package org.sopt.zepeto.ui.main
+package org.sopt.zepeto.ui.main.world
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

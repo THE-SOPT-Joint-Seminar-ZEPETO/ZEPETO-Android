@@ -1,11 +1,10 @@
-package org.sopt.zepeto.ui
+package org.sopt.zepeto.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import org.sopt.zepeto.R
 import org.sopt.zepeto.databinding.ActivityMainBinding
-import org.sopt.zepeto.util.ViewPagerAdapter
 
 
 class MainActivity : AppCompatActivity() {
@@ -61,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         const val FEED_POS = 3
         const val PROFILE_POS = 4
 
-        private var instance:MainActivity? = null
+        private var instance: MainActivity? = null
         fun getInstance(): MainActivity? {
             return instance
         }

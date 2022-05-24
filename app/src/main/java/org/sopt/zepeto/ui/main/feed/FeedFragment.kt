@@ -1,4 +1,4 @@
-package org.sopt.zepeto.ui.main
+package org.sopt.zepeto.ui.main.feed
 
 import android.os.Bundle
 import android.view.LayoutInflater
