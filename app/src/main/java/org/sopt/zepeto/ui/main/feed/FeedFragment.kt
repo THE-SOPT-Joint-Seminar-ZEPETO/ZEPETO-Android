@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import org.sopt.zepeto.data.ServiceCreator
@@ -20,6 +21,7 @@ class FeedFragment : Fragment() {
         _binding = FragmentFeedBinding.inflate(layoutInflater, container, false)
         initViewClickListener()
         initData()
+        setViewMore(binding.tvTextBox, binding.viewMore)
         return binding.root
     }
 
@@ -51,6 +53,30 @@ class FeedFragment : Fragment() {
                     }
                 }
             )
+        }
+    }
+
+    private fun setViewMore(contentTextView: TextView, viewMoreTextView: TextView) {
+        // getEllipsisCount()을 통한 더보기 표시 및 구현
+        contentTextView.post {
+            val lineCount = contentTextView.layout.lineCount
+            if (lineCount > 0) {
+                if (contentTextView.layout.getEllipsisCount(lineCount - 1) > 0) {
+                    // 더보기 표시
+                    viewMoreTextView.visibility = View.VISIBLE
+
+                    // 더보기 클릭 이벤트
+                    viewMoreTextView.setOnClickListener {
+                        contentTextView.maxLines = Int.MAX_VALUE
+                        viewMoreTextView.visibility = View.GONE
+                    }
+
+                    contentTextView.setOnClickListener {
+                        contentTextView.maxLines = 2
+                        viewMoreTextView.visibility = View.VISIBLE
+                    }
+                }
+            }
         }
     }
 }
