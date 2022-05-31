@@ -11,7 +11,7 @@ import org.sopt.zepeto.ui.eidtcontent.EditContentActivity
 
 class EditImageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditImageBinding
-    private lateinit var imageUri: Uri
+    private var imageUri: Uri? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditImageBinding.inflate(layoutInflater)
@@ -24,11 +24,13 @@ class EditImageActivity : AppCompatActivity() {
 
     private fun initImage() {
         if (intent.hasExtra(IMAGE_URI)) {
-            imageUri = intent.getParcelableExtra<Uri>(IMAGE_URI)!!
+            imageUri = intent.getParcelableExtra<Uri>(IMAGE_URI)
         }
-        Glide.with(this)
-            .load(imageUri)
-            .into(binding.ivEditImage)
+        if (imageUri != null) {
+            Glide.with(this)
+                .load(imageUri)
+                .into(binding.ivEditImage)
+        }
     }
 
     private fun initBtnClickListener() {
