@@ -1,33 +1,39 @@
 package org.sopt.zepeto.ui.editcontent
 
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.graphics.Rect
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import okhttp3.MultipartBody
+import org.sopt.zepeto.data.ServiceCreator
 import org.sopt.zepeto.databinding.ActivityEditContentBinding
 import org.sopt.zepeto.ui.editimage.EditImageActivity
 import org.sopt.zepeto.ui.main.MainActivity
+import org.sopt.zepeto.util.MultiPartResolver
 import org.sopt.zepeto.util.ZepetoSnackBar
+import org.sopt.zepeto.util.enqueueUtil
 
 class EditContentActivity : AppCompatActivity() {
     private val mainActivity = MainActivity.getInstance()
     private lateinit var binding: ActivityEditContentBinding
-    private lateinit var imageUri: Uri
+    private var imageUri: Uri? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditContentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        initImage()
         setEditTextFocusListener()
         initBackButtonClick()
         initCompleteButtonCLick()
-        initImage()
     }
 
     private fun initBackButtonClick() {
@@ -36,8 +42,22 @@ class EditContentActivity : AppCompatActivity() {
 
     private fun initCompleteButtonCLick() {
         binding.btnComplete.setOnClickListener {
-            showSnackBar()
-            mainActivity?.setCurrentItem(MainActivity.FEED_POS)
+            uploadPost(
+                contents = binding.etContents.text.toString(),
+                image = MultiPartResolver().createImgMultiPart(requireNotNull(imageUri), this)
+            )
+        }
+    }
+
+    private fun uploadPost(contents: String, image: MultipartBody.Part) {
+        ServiceCreator.zepetoService.uploadPost(contents, image).apply {
+            enqueueUtil(
+                onSuccess = {
+                    showSnackBar()
+                    mainActivity?.setCurrentItem(MainActivity.FEED_POS)
+                },
+                onError = { code -> Log.d(TAG, "uploadPost: fail $code") }
+            )
         }
     }
 
@@ -78,11 +98,7 @@ class EditContentActivity : AppCompatActivity() {
     }
 
     private fun initImage() {
-        if (intent.hasExtra(EditImageActivity.IMAGE_URI)) {
-            imageUri = intent.getParcelableExtra<Uri>(EditImageActivity.IMAGE_URI)!!
-        }
-        Glide.with(this)
-            .load(imageUri)
-            .into(binding.ivPhoto)
+        imageUri = intent.getParcelableExtra(EditImageActivity.IMAGE_URI)
+        Glide.with(this).load(imageUri).into(binding.ivPhoto)
     }
 }
