@@ -30,7 +30,8 @@ class EditContentActivity : AppCompatActivity() {
         binding = ActivityEditContentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initImage()
+        initImageFromIntentExtra()
+        setImageToImageView()
         setEditTextFocusListener()
         initBackButtonClick()
         initCompleteButtonCLick()
@@ -97,8 +98,11 @@ class EditContentActivity : AppCompatActivity() {
         return super.dispatchTouchEvent(event)
     }
 
-    private fun initImage() {
+    private fun initImageFromIntentExtra() {
         imageUri = intent.getParcelableExtra(EditImageActivity.IMAGE_URI)
+    }
+
+    private fun setImageToImageView() {
         Glide.with(this).load(imageUri).into(binding.ivPhoto)
     }
 }
