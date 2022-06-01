@@ -61,7 +61,7 @@ class EditContentActivity : AppCompatActivity() {
     override fun dispatchTouchEvent(event: MotionEvent): Boolean {
         val v = currentFocus
         if (v != null && event.action == MotionEvent.ACTION_UP || event.action == MotionEvent.ACTION_MOVE && v is EditText && !v.javaClass
-                .name.startsWith("android.webkit.")
+            .name.startsWith("android.webkit.")
         ) {
             if (v is EditText) {
                 val outRect = Rect()
