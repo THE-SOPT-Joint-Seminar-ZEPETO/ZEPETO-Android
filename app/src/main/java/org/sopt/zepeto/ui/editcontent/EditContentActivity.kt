@@ -1,4 +1,4 @@
-package org.sopt.zepeto.ui.eidtcontent
+package org.sopt.zepeto.ui.editcontent
 
 import android.content.Context
 import android.graphics.Rect
