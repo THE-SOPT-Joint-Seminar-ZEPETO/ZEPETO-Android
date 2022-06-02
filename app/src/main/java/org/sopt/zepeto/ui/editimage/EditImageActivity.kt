@@ -1,10 +1,12 @@
 package org.sopt.zepeto.ui.editimage
 
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowInsetsControllerCompat
 import com.bumptech.glide.Glide
 import org.sopt.zepeto.databinding.ActivityEditImageBinding
 import org.sopt.zepeto.ui.eidtcontent.EditContentActivity
@@ -12,11 +14,19 @@ import org.sopt.zepeto.ui.eidtcontent.EditContentActivity
 class EditImageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditImageBinding
     private var imageUri: Uri? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditImageBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
+        window.apply {
+            //상태바
+            statusBarColor = Color.BLACK
+            //상태바 아이콘(true: 검정 / false: 흰색)
+            WindowInsetsControllerCompat(this, this.decorView).isAppearanceLightStatusBars = false
+        }
+
+        setContentView(binding.root)
         initImage()
         initBtnClickListener()
         initViewClickListener()
