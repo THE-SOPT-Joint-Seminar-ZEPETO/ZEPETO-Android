@@ -58,6 +58,7 @@ class FeedFragment : Fragment() {
 
     private fun setViewMore(contentTextView: TextView, viewMoreTextView: TextView) {
         // getEllipsisCount()을 통한 더보기 표시 및 구현
+        //파라미터 대신에 변수 활용하여 의존성 낮추기
         contentTextView.post {
             val lineCount = contentTextView.layout.lineCount
             if (lineCount > 0) {

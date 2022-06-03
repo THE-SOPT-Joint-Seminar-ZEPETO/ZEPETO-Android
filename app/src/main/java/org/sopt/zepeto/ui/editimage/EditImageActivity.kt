@@ -29,6 +29,7 @@ class EditImageActivity : AppCompatActivity() {
 
         setContentView(binding.root)
         initImage()
+        setImage()
         initBtnClickListener()
         initViewClickListener()
     }
@@ -37,6 +38,10 @@ class EditImageActivity : AppCompatActivity() {
         if (intent.hasExtra(IMAGE_URI)) {
             imageUri = intent.getParcelableExtra<Uri>(IMAGE_URI)
         }
+
+    }
+
+    private fun setImage(){
         if (imageUri != null) {
             Glide.with(this)
                 .load(imageUri)
@@ -45,6 +50,7 @@ class EditImageActivity : AppCompatActivity() {
                 .fallback(R.drawable.dummy_image)
                 .into(binding.ivEditImage)
         }
+
     }
 
     private fun initBtnClickListener() {
