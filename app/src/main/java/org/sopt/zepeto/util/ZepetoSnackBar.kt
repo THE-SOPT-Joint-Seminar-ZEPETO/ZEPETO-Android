@@ -45,6 +45,7 @@ class ZepetoSnackBar(view: View) {
             override fun onShown(tbb: Snackbar?) {
                 onShown?.invoke()
             }
+
             override fun onDismissed(tbb: Snackbar?, e: Int) {
                 onDismiss?.invoke()
                 if (e == Snackbar.Callback.DISMISS_EVENT_TIMEOUT) {

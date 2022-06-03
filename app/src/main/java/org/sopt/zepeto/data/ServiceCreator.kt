@@ -10,5 +10,6 @@ object ServiceCreator {
     private fun buildRetrofit(url: String): Retrofit =
         Retrofit.Builder().baseUrl(url).addConverterFactory(GsonConverterFactory.create()).build()
 
-    val zepetoService: ZepetoService = buildRetrofit(BASE_URL_ZEPETO).create(ZepetoService::class.java)
+    val zepetoService: ZepetoService =
+        buildRetrofit(BASE_URL_ZEPETO).create(ZepetoService::class.java)
 }

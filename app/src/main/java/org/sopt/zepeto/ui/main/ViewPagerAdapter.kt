@@ -3,7 +3,6 @@ package org.sopt.zepeto.ui.main
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import org.sopt.zepeto.ui.main.MainActivity
 import org.sopt.zepeto.ui.main.feed.FeedFragment
 import org.sopt.zepeto.ui.main.home.HomeFragment
 import org.sopt.zepeto.ui.main.make.MakeFragment

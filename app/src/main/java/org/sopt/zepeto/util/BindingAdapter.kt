@@ -1,7 +1,6 @@
 package org.sopt.zepeto.util
 
 import android.widget.ImageView
-import androidx.annotation.DrawableRes
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 

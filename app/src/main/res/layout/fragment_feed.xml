@@ -95,10 +95,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="1dp"
             android:layout_marginEnd="14dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/ic_profile_image"
@@ -161,8 +163,8 @@
                 android:id="@+id/tv_user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/noto_sans"
                 android:text="\@User Name"
+                android:textAppearance="@style/text_style_16"
                 android:textColor="@color/white_a_80"
                 app:layout_constraintBottom_toTopOf="@id/tv_text_box"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -174,9 +176,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
-                android:fontFamily="@font/noto_sans_thin"
                 android:maxLines="2"
                 android:text="Hi is is so difficult to study cotlin....Hi is is so difficult to study cotlin....Hi is is so difficult to study cotlin....Hi is is so difficult to study cotlin"
+                android:textAppearance="@style/text_style_14"
                 android:textColor="@color/white_a_80"
                 app:layout_constraintBottom_toTopOf="@id/view_more"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -186,13 +188,11 @@
                 android:id="@+id/view_more"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/noto_sans_thin"
                 android:text="...더보기"
+                android:textAppearance="@style/text_style_16"
                 android:textColor="@color/white_a_80"
-                android:visibility="visible"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
