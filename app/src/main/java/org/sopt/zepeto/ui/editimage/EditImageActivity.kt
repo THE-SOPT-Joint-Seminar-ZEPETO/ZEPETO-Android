@@ -10,7 +10,7 @@ import androidx.core.view.WindowInsetsControllerCompat
 import com.bumptech.glide.Glide
 import org.sopt.zepeto.R
 import org.sopt.zepeto.databinding.ActivityEditImageBinding
-import org.sopt.zepeto.ui.eidtcontent.EditContentActivity
+import org.sopt.zepeto.ui.editcontent.EditContentActivity
 
 class EditImageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditImageBinding
@@ -60,7 +60,6 @@ class EditImageActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
     }
 
     private fun initViewClickListener() {
@@ -72,7 +71,7 @@ class EditImageActivity : AppCompatActivity() {
         }
     }
 
-    //싱글톤 객체라고 합니다..
+    // 싱글톤 객체라고 합니다..
     companion object {
         const val IMAGE_URI = "imageUri"
     }
