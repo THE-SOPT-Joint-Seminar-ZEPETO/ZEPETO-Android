@@ -8,6 +8,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowInsetsControllerCompat
 import com.bumptech.glide.Glide
+import org.sopt.zepeto.R
 import org.sopt.zepeto.databinding.ActivityEditImageBinding
 import org.sopt.zepeto.ui.eidtcontent.EditContentActivity
 
@@ -39,6 +40,9 @@ class EditImageActivity : AppCompatActivity() {
         if (imageUri != null) {
             Glide.with(this)
                 .load(imageUri)
+                .placeholder(R.drawable.dummy_image)
+                .error(R.drawable.dummy_image)
+                .fallback(R.drawable.dummy_image)
                 .into(binding.ivEditImage)
         }
     }
