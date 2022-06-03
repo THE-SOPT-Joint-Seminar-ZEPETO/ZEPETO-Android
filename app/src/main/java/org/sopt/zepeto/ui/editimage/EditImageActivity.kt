@@ -7,11 +7,11 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import org.sopt.zepeto.databinding.ActivityEditImageBinding
-import org.sopt.zepeto.ui.eidtcontent.EditContentActivity
+import org.sopt.zepeto.ui.editcontent.EditContentActivity
 
 class EditImageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditImageBinding
-    private lateinit var imageUri : Uri
+    private lateinit var imageUri: Uri
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditImageBinding.inflate(layoutInflater)
@@ -38,10 +38,9 @@ class EditImageActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
     }
 
-    private fun initViewClickListener(){
+    private fun initViewClickListener() {
         binding.root.setOnClickListener {
             binding.clEdit.visibility = View.VISIBLE
         }
@@ -50,7 +49,7 @@ class EditImageActivity : AppCompatActivity() {
         }
     }
 
-    //싱글톤 객체라고 합니다..
+    // 싱글톤 객체라고 합니다..
     companion object {
         const val IMAGE_URI = "imageUri"
     }
