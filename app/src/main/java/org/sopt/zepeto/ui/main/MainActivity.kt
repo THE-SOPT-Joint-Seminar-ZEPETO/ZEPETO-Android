@@ -10,7 +10,6 @@ import androidx.viewpager2.widget.ViewPager2
 import org.sopt.zepeto.R
 import org.sopt.zepeto.databinding.ActivityMainBinding
 
-
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 

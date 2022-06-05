@@ -16,7 +16,7 @@ interface ZepetoService {
     fun getImages(): Call<BaseResponse<List<ResponseImages>>>
 
     @GET("feed")
-    fun getFeed() : Call<BaseResponse<ResponseFeed>>
+    fun getFeed(): Call<BaseResponse<ResponseFeed>>
 
     @Multipart
     @POST("feed")

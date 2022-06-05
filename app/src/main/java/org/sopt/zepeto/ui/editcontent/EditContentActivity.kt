@@ -1,10 +1,7 @@
 package org.sopt.zepeto.ui.editcontent
 
-import android.Manifest
-import android.app.Activity
 import android.content.ContentValues.TAG
 import android.content.Context
-import android.content.pm.PackageManager
 import android.graphics.Rect
 import android.net.Uri
 import android.os.Bundle
@@ -14,7 +11,6 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import com.bumptech.glide.Glide
 import okhttp3.MultipartBody
 import org.sopt.zepeto.data.ServiceCreator
@@ -24,7 +20,6 @@ import org.sopt.zepeto.ui.main.MainActivity
 import org.sopt.zepeto.util.MultiPartResolver
 import org.sopt.zepeto.util.ZepetoSnackBar
 import org.sopt.zepeto.util.enqueueUtil
-
 
 class EditContentActivity : AppCompatActivity() {
     private val mainActivity = MainActivity.getInstance()
@@ -45,8 +40,6 @@ class EditContentActivity : AppCompatActivity() {
     private fun initBackButtonClick() {
         binding.ivBack.setOnClickListener { super.onBackPressed() }
     }
-
-
 
     private fun initCompleteButtonCLick() {
         binding.btnComplete.setOnClickListener {

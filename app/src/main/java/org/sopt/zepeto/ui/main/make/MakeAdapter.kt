@@ -9,7 +9,6 @@ import org.sopt.zepeto.databinding.ItemMakeListBinding
 import org.sopt.zepeto.util.GridSpaceDecoration
 import org.sopt.zepeto.util.dpToPixel
 
-
 class MakeAdapter : RecyclerView.Adapter<MakeAdapter.MakeViewHolder>() {
     val makeList = mutableListOf<ResponseImages>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MakeViewHolder {
