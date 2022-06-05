@@ -8,8 +8,9 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowInsetsControllerCompat
 import com.bumptech.glide.Glide
+import org.sopt.zepeto.R
 import org.sopt.zepeto.databinding.ActivityEditImageBinding
-import org.sopt.zepeto.ui.eidtcontent.EditContentActivity
+import org.sopt.zepeto.ui.editcontent.EditContentActivity
 
 class EditImageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditImageBinding
@@ -28,6 +29,7 @@ class EditImageActivity : AppCompatActivity() {
 
         setContentView(binding.root)
         initImage()
+        setImage()
         initBtnClickListener()
         initViewClickListener()
     }
@@ -36,11 +38,19 @@ class EditImageActivity : AppCompatActivity() {
         if (intent.hasExtra(IMAGE_URI)) {
             imageUri = intent.getParcelableExtra<Uri>(IMAGE_URI)
         }
+
+    }
+
+    private fun setImage(){
         if (imageUri != null) {
             Glide.with(this)
                 .load(imageUri)
+                .placeholder(R.drawable.dummy_image)
+                .error(R.drawable.dummy_image)
+                .fallback(R.drawable.dummy_image)
                 .into(binding.ivEditImage)
         }
+
     }
 
     private fun initBtnClickListener() {
@@ -50,7 +60,6 @@ class EditImageActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
     }
 
     private fun initViewClickListener() {
@@ -62,7 +71,7 @@ class EditImageActivity : AppCompatActivity() {
         }
     }
 
-    //싱글톤 객체라고 합니다..
+    // 싱글톤 객체라고 합니다..
     companion object {
         const val IMAGE_URI = "imageUri"
     }
