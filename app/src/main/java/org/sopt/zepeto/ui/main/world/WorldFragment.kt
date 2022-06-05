@@ -12,7 +12,8 @@ class WorldFragment : Fragment() {
     private val binding get() = _binding ?: error("Binding이 초기화 되지 않았습니다")
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentWorldBinding.inflate(layoutInflater, container, false)
@@ -23,5 +24,4 @@ class WorldFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

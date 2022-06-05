@@ -21,9 +21,9 @@ class EditImageActivity : AppCompatActivity() {
         binding = ActivityEditImageBinding.inflate(layoutInflater)
 
         window.apply {
-            //상태바
+            // 상태바
             statusBarColor = Color.BLACK
-            //상태바 아이콘(true: 검정 / false: 흰색)
+            // 상태바 아이콘(true: 검정 / false: 흰색)
             WindowInsetsControllerCompat(this, this.decorView).isAppearanceLightStatusBars = false
         }
 
@@ -38,10 +38,9 @@ class EditImageActivity : AppCompatActivity() {
         if (intent.hasExtra(IMAGE_URI)) {
             imageUri = intent.getParcelableExtra<Uri>(IMAGE_URI)
         }
-
     }
 
-    private fun setImage(){
+    private fun setImage() {
         if (imageUri != null) {
             Glide.with(this)
                 .load(imageUri)
@@ -50,7 +49,6 @@ class EditImageActivity : AppCompatActivity() {
                 .fallback(R.drawable.dummy_image)
                 .into(binding.ivEditImage)
         }
-
     }
 
     private fun initBtnClickListener() {

@@ -13,7 +13,6 @@ import org.sopt.zepeto.databinding.FragmentMakeBinding
 import org.sopt.zepeto.ui.editimage.EditImageActivity
 import org.sopt.zepeto.util.enqueueUtil
 
-
 class MakeFragment : Fragment() {
     private var _binding: FragmentMakeBinding? = null
     private val binding get() = _binding ?: error("Binding이 초기화 되지 않았습니다")
@@ -30,7 +29,8 @@ class MakeFragment : Fragment() {
         }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentMakeBinding.inflate(layoutInflater, container, false)
@@ -62,7 +62,6 @@ class MakeFragment : Fragment() {
             )
         }
     }
-
 
     private fun initBtnClickListener() {
         binding.clUpload.setOnClickListener {
