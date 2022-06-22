@@ -95,17 +95,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/profile_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:civ_border_color="@color/white"
-            app:civ_border_width="1dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="1dp"
             android:layout_marginEnd="14dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/ic_profile_image"
+            android:background="@drawable/ic_white_circle_background"
             app:layout_constraintBottom_toTopOf="@id/ib_heart"
             app:layout_constraintEnd_toEndOf="parent" />
+
+       <!-- app:civ_border_color="@color/white"
+        app:civ_border_width="1dp" circle image view 사용시 테두리 코드
+        필요 없을시 삭제 요망-->
 
         <ImageButton
             android:id="@+id/ib_heart"
@@ -163,7 +166,7 @@
                 android:id="@+id/tv_user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\@User Name"
+                android:text="@string/dummy_string"
                 android:textAppearance="@style/text_style_16"
                 android:textColor="@color/white_a_80"
                 app:layout_constraintBottom_toTopOf="@id/tv_text_box"
@@ -177,7 +180,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="Hi is is so difficult to study cotlin....Hi is is so difficult to study cotlin....Hi is is so difficult to study cotlin....Hi is is so difficult to study cotlin"
+                android:text="@string/view_more"
                 android:textAppearance="@style/text_style_14"
                 android:textColor="@color/white_a_80"
                 app:layout_constraintBottom_toTopOf="@id/view_more"
@@ -188,7 +191,7 @@
                 android:id="@+id/view_more"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="...더보기"
+                android:text="@string/view_more"
                 android:textAppearance="@style/text_style_16"
                 android:textColor="@color/white_a_80"
                 android:visibility="gone"
